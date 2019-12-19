@@ -1,3 +1,8 @@
 #!/bin/bash
 
+# Make sure the path exists
+DIR=$(dirname "$BUILDKITE_PLUGIN_WRITE_FILE_PATH")
+mkdir -p "$DIR"
+
+# Write the file
 echo "$BUILDKITE_PLUGIN_WRITE_FILE_CONTENTS" > $BUILDKITE_PLUGIN_WRITE_FILE_PATH
